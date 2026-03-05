@@ -23,7 +23,7 @@ const Ticket = ({ ticket, handleClickedTickets }) => {
     }
     return (
         <a onClick={ticketClickHandler} href='#'>
-            <div className="card bg-base-100 border border-slate-200 shadow-sm rounded-md">
+            <div className="card bg-base-100 border border-slate-200 shadow-sm rounded-md min-h-37.5">
                 <div className="p-5">
                     <div className="flex justify-between items-start mb-2">
                         <h2 className="text-[17px] font-bold text-[#1e293b]"> {ticket.title} </h2>

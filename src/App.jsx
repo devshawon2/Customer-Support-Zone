@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer';
 import { Suspense } from 'react';
 
 function App() {
-  const ticketsPromise = fetch('../tickets.json')
+  const ticketsPromise = fetch('/tickets.json')
     .then(res => res.json());
   return (
     <>

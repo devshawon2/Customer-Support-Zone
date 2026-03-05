@@ -1,7 +1,7 @@
 import React from 'react';
 import Ticket from './Ticket/Ticket';
 
-const Tickets = ({ tickets, handleClickedTickets, clickedTickets, handleRemove }) => {
+const Tickets = ({ tickets, handleClickedTickets, clickedTickets, handleComplete, resolvedTickets }) => {
 
 
     return (
@@ -23,23 +23,36 @@ const Tickets = ({ tickets, handleClickedTickets, clickedTickets, handleRemove }
                                 <p>Select a ticket to add to Task Status</p>
                             }
                             <ul className="list bg-base-100 rounded-box shadow-md">
-                                {clickedTickets.map(inProgressTicket =>
-                                    <li className="list-row flex flex-col items-center" key={inProgressTicket.id}>
-                                        <div className="list-col-grow">
-                                            <p className='inter-medium text-lg'>{inProgressTicket.title}</p>
-                                        </div>
-                                        <button onClick={() => handleRemove(inProgressTicket.id)} className="btn w-full btn-square btn-ghost bg-[#02A53B]">
-                                            Complete
-                                        </button>
-                                    </li>
-                                )
+                                {
+                                    clickedTickets.map(inProgressTicket =>
+                                        <li className="list-row flex flex-col items-center" key={inProgressTicket.id}>
+                                            <div className="list-col-grow">
+                                                <p className='inter-medium text-lg'>{inProgressTicket.title}</p>
+                                            </div>
+                                            <button onClick={() => handleComplete(inProgressTicket.id)} className="btn w-full btn-square btn-ghost bg-[#02A53B]">
+                                                Complete
+                                            </button>
+                                        </li>
+                                    )
                                 }
                             </ul>
                             <br />
                         </div>
                         <div className="resolved-task my-2">
                             <h4 className='text-2xl inter-semibold'>Resolved Task</h4>
-                            <p>No resolved tasks yet.</p>
+                            <br />
+                            {resolvedTickets?.length === 0 ? <p>No resolved tasks yet.</p>
+                                : (
+                                    <ul className="list rounded-box shadow-md  bg-[#E0E7FF]">
+                                        {resolvedTickets?.map(resolvedTicket => (
+                                            <li className="list-row flex flex-col items-center" key={resolvedTicket.id}>
+                                                <div className="list-col-grow">
+                                                    <p className='inter-medium text-lg'>{resolvedTicket.title}</p>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                         </div>
                     </div>
                 </div>
