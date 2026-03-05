@@ -1,0 +1,8 @@
+#in-progress {
+    background-image: url('../../../public/vector1.png'), linear-gradient(to bottom right, #632EE3, #9F62F2);
+}
+
+#resolved {
+    background-image: url('../../../public/vector1.png'), linear-gradient(to bottom right, #54CF68, #00827A);
+
+}
