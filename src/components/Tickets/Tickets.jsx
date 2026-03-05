@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Ticket from './Ticket/Ticket';
 
-const Tickets = ({ tickets }) => {
-    const handleClickedTickets = (ticket) => {
-        console.log(ticket);
-    }
+const Tickets = ({ tickets, handleClickedTickets }) => {
+
+
     return (
         <section className='w-[80%] m-auto '>
             <div className='Tickets-Tasks-Operations'>

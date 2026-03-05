@@ -1,9 +1,6 @@
 import React from 'react';
 
 const Ticket = ({ ticket, handleClickedTickets }) => {
-    const ticketClickHandler = () => {
-        handleClickedTickets(ticket);
-    }
     // UI manipulation for ticket status
     const badgeTextUpperCase = ticket.status.toUpperCase();
     const badgeTextStyle = badgeTextUpperCase === 'Open'.toUpperCase()
@@ -19,8 +16,12 @@ const Ticket = ({ ticket, handleClickedTickets }) => {
         ? 'text-red-500'
         : priorityTextUpperCase === 'medium'.toUpperCase() ? 'text-[#FEBB0C]'
             : 'text-[#02A53B]'
+
+    const ticketClickHandler = () => {
+        handleClickedTickets(ticket);   
+    }
     return (
-        <a onClick={ticketClickHandler} href=''>
+        <a onClick={ticketClickHandler} href='#'>
             <div className="card bg-base-100 border border-slate-200 shadow-sm rounded-md">
                 <div className="p-5">
                     <div className="flex justify-between items-start mb-2">
