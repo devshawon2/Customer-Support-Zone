@@ -18,7 +18,8 @@ const Ticket = ({ ticket, handleClickedTickets }) => {
             : 'text-[#02A53B]'
 
     const ticketClickHandler = () => {
-        handleClickedTickets(ticket);   
+        handleClickedTickets(ticket);
+
     }
     return (
         <a onClick={ticketClickHandler} href='#'>
